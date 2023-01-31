@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import './App.css';
+import NewProduct from './components/NewProduct/NewProduct';
 
 import Products from './containers/Products/Products';
 
@@ -47,8 +48,12 @@ function App() {
 
       <label> {count} </label>
       <button onClick={countHandler} >add counter</button>
-      {flag ? <Products somethingHandler={somethingHandler} /> : null}
-      <button onClick={flagHandler}> {flag ? "Hide" : "Show"}</button>
+      <Products flag={flag} />
+      {/* <button onClick={flagHandler}> {flag ? "Hide" : "Show"}</button> */}
+      
+      <button onClick={flagHandler} > Update flag</button>
+
+      <NewProduct flag={flagHandler}/> 
     </div>
   );
 }
